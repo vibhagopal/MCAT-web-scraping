@@ -1,6 +1,6 @@
 # MCAT Practice Questions Scraper
 
-This Python script is a web scraper specifically designed for extracting MCAT (Medical College Admission Test) practice questions from [mcat-prep.com](https://www.mcat-prep.com/mcat-sample-questions/). The scraped data is organized into three lists: `questions`, `answers`, and `explanations`, making it easy to access and utilize for MCAT preparation. This script will serve a blueprint for future webscraping of NCMHCE Practice Exams as needed by the Social Well-being lab at the Georgia Institute of Technology. 
+This Python script is a web scraper specifically designed for extracting MCAT (Medical College Admission Test) practice questions from [mcat-prep.com](https://www.mcat-prep.com/mcat-sample-questions/). The scraped data is organized into three lists: `questions`, `answers`, and `explanations`, making it easy to access and utilize for MCAT preparation. This script will serve a blueprint for future webscraping of NCMHCE Practice Exams as needed by the Social Well-being Lab at the Georgia Institute of Technology. 
 
 ## Features
 
