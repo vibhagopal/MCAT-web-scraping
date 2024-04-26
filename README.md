@@ -19,6 +19,14 @@ To utilize the MCAT Practice Questions Scraper:
 4. Run the script to scrape the practice questions along with their associated data.
 5. Access the extracted questions, answer choices, correct answers, and explanations for MCAT preparation.
 
+## Important Notes
+
+The following is the HTML code provided by [mcat-prep.com](https://www.mcat-prep.com/mcat-sample-questions/). This script utilizes the DOM to scrape relevant information.
+
+<div style="text-align:center">
+    ![Alt text](https://github.com/vibhagopal/MCAT-web-scraping/blob/main/img.png)
+</div>
+
 ## Contributing
 
 Contributions to the MCAT Practice Questions Scraper are welcome! If you have any suggestions, improvements, or bug fixes, please feel free to open an issue or create a pull request.
