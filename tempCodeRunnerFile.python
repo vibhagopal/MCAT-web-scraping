@@ -1,0 +1,45 @@
+import requests
+from bs4 import BeautifulSoup
+
+# URL of the webpage containing practice questions
+url = 'https://www.mcat-prep.com/mcat-sample-questions/'
+
+# Send an HTTP GET request to the webpage
+response = requests.get(url)
+
+# Check if the request was successful (status code 200)
+if response.status_code == 200:
+    # Parse the HTML content of the webpage
+    soup = BeautifulSoup(response.content, 'html.parser')
+
+    # Find the section containing practice questions
+    section_class = soup.find_all('section', class_='col-md-8 m_xs_bottom_30')[0]
+
+    # Find all <form> elements that likely contain answer choices
+    question_paragraphs = section_class.find_all('form')
+    
+    # Find all <div> elements whose id attributes start with "questionanswer"
+    explanation_paragraphs = section_class.find_all('div', id=lambda x: x and x.startswith('questionanswer'))
+
+    questions = []
+    correct_answers = []
+    explanations = []
+
+    # Extract questions
+    for form in question_paragraphs:        
+        prev_sibling = form.find_previous('p')
+        if prev_sibling:
+            questions.append(prev_sibling.get_text(strip=True))
+
+    # Extract correct answers and explanations
+    for ex in explanation_paragraphs:
+        ex = ex.get_text(strip=True)
+        if 'Correct Answer:' in ex:
+            correct_answer, explanation = ex.split("Explanation")
+            correct_answers.append(correct_answer.strip())
+            explanations.append(explanation.strip())
+
+    # Access the scraped data from the questions, correct_answers, and explanations lists
+    print("Questions:", questions)
+    print("Correct Answers:", correct_answers)
+    print("Explanations:", explanations)
